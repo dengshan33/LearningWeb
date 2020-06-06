@@ -1,0 +1,49 @@
+.userAction{
+    position: absolute;
+    color:lightseagreen;
+
+}
+.userAction:hover{
+    background-color:mediumvioletred;
+}
+.postAction{
+    position: absolute;
+    color:lightseagreen;
+}
+.postAction:hover{
+    background-color: mediumvioletred;
+}
+.newAction{
+    position: absolute;
+    color:lightseagreen;
+}
+.newAction:hover{
+    background-color: mediumvioletred;
+}
+.adminAction{
+    position: absolute;
+    color:lightseagreen;
+}
+.adminAction:hover{
+    background-color:mediumvioletred;
+}
+.messagesAction{
+
+
+    color:lightseagreen;
+}
+.messagesAction:hover{
+    background-color: mediumvioletred;
+}
+.aboutUs{
+    position: absolute;
+    color:lightseagreen;
+}
+.aboutUs:hover{
+    background-color: mediumvioletred;
+}
+button{
+    background-color: teal;
+    border: teal;
+    color:whitesmoke;
+}

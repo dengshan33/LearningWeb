@@ -1,0 +1,53 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">新闻管理</font> &gt;<font color="#8AAEB8">封禁帖子</font> </p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+<div style="margin-top: 20px">
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="type" style="color: #8AAEB8">输入要查找帖子的类型(return/find)</label>
+            <input style="width: 50%;" type="text" class="form-control" name="type"  id="type" placeholder="Please enter the type of post you want to view">
+        </div>
+        <div class="form-group">
+            <label for="id" style="color: #8AAEB8">输入要查找帖子的ID</label>
+            <input style="width: 50%;" type="text" class="form-control" name="id"  id="id" placeholder="Please enter the ID of the post ">
+        </div>
+
+        <button type="submit" class="btn btn-default">搜索</button>
+    </form>
+    <div >
+        <table class="table table-hover" style="color: #8AAEB8">
+            <thead>
+            <tr>
+                <th>{$array[0]}</th>
+                <th>{$array[1]}</th>
+                <th>{$array[2]}</th>
+                <th>{$array[3]}</th>
+                <th>{$array[4]}</th>
+            </tr>
+            </thead>
+                <tr >
+                    <td>{$data1.rid}</td>
+                    <td>{$data1.rpname}</td>
+                    <td>{$data1.rpicture}</td>
+                    <td>{$data1.isReturned}</td>
+                    <td>{$data1.isflag}</td>
+                    <td><a href="__CONTROLLER__/detailPostInfo/type/{$type}?id={$data1.rid}" >{$a}</a></td>
+                </tr>
+                <tr >
+                    <td>{$data2.fid}</td>
+                    <td>{$data2.fname}</td>
+                    <td>{$data2.fpicture}</td>
+                    <td>{$data2.isfind}</td>
+                    <td>{$data2.isflag}</td>
+                    <td><a href="__CONTROLLER__/detailPostInfo/type/{$type}?id={$data2.fid}" >{$b}</a></td>
+                </tr>
+        </table>
+    </div>
+</div>
+
+<style type="text/css">
+    .searchPost{
+        background-color: mediumvioletred;
+    }
+</style>

@@ -1,0 +1,44 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">用户管理</font> &gt;<font color="#8AAEB8">查询用户</font> </p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 20px">
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="id" style="color: #8AAEB8">输入要查询用户的ID或用户名</label>
+            <input style="width: 50%;" type="text" class="form-control" name="search" value="{$user}" id="id" placeholder="Please enter the ID or username of the user you want to query">
+        </div>
+
+        <button type="submit" class="btn btn-default">搜索</button>
+    </form>
+    <div >
+        <table class="table" style="color: #8AAEB8">
+            <thead>
+            <tr>
+                <th>{$array[0]}</th>
+                <th>{$array[1]}</th>
+                <th>{$array[2]}</th>
+                <th>{$array[3]}</th>
+                <th>{$array[4]}</th>
+                <th>{$array[5]}</th>
+            </tr>
+            </thead>
+            <tr >
+                <td>{$data.mid}</td>
+                <td>{$data.user}</td>
+                <td>{$data.phone}</td>
+                <td>{$data.email}</td>
+                <td>{$data.freeze}</td>
+                <td>{$data.reg_time}</td>
+                <td><a href="__CONTROLLER__/banUser/mid/{$data.mid}" >{$a}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+<style type="text/css">
+    .userView{
+        background-color: mediumvioletred;
+    }
+</style>

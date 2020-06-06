@@ -1,0 +1,24 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">新闻管理</font> &gt;<font color="#8AAEB8">帖子信息</font> </p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+<div style="margin-top: 20px;color:#8AAEB8 ">
+    <div style="margin-left: 10px">
+        <p><b>id:</b>{$data2.fid}</p>
+        <p><b>丢失物品名称:</b>{$data2.fname}</p>
+        <p><b>丢失物品描述:</b>{$data2.fdescrip}</p>
+        <p><b>图片:</b></p>
+        <p><img src="__PUBLIC__/Uploads/findthingPic/{$data2.fpicture}" width="250" height="150"></p>
+        <p><b>发起用户名:</b>{$data2.fser}</p>
+        <p><b>发起者联系电话:</b>{$data2.fphone}</p>
+        <p><b>发表时间：</b>{$data2.ftime}</p>
+        <p><b>是否已经找到：</b>{$data2.isfind}</p>
+        <p><b>是否被封禁:</b>{$data2.isflag}</p>
+        <a href="__CONTROLLER__/postInfo"> 返回</a> &nbsp;<a href="__CONTROLLER__/banPost?type=find&id={$data2.fid}">封禁</a>
+    </div>
+</div>
+<style type="text/css">
+    .postInfo{
+        background-color: mediumvioletred;
+    }
+</style>

@@ -1,0 +1,24 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">新闻管理</font> &gt;<font color="#8AAEB8">帖子信息</font> </p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+<div style="margin-top: 20px;color:#8AAEB8 ">
+    <div style="margin-left: 10px">
+        <p><b>id:</b>{$data1.rid}</p>
+        <p><b>归还物品名称:</b>{$data1.rpname}</p>
+        <p><b>归还物品描述:</b>{$data1.rdescrip}</p>
+        <p><b>图片:</b></p>
+        <p><img src="__PUBLIC__/Uploads/returnsPic/{$data1.rpicture}" width="250" height="150"></p>
+        <p><b>捡到的地方:</b>{$data1.raddress}</p>
+        <p><b>发起者联系电话:</b>{$data1.rphone}</p>
+        <p><b>发表时间：</b>{$data1.rtime}</p>
+        <p><b>是否已经归还：</b>{$data1.isReturned}</p>
+        <p><b>是否被封禁:</b>{$data1.isflag}</p>
+        <a href="__CONTROLLER__/postInfo"> 返回</a> &nbsp;<a href="__CONTROLLER__/banPost?type=return&id={$data1.rid}">封禁</a>
+    </div>
+</div>
+<style type="text/css">
+    .postInfo{
+        background-color: mediumvioletred;
+    }
+</style>

@@ -1,0 +1,28 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">消息中心</font>
+    &gt;<font color="#8AAEB8">用户留言</font>
+    &gt;<font color="#8AAEB8">详细信息</font>
+</p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 20px;margin-left:10px;color:#8AAEB8 ">
+    <P><b>id：</b>{$data.lid}</P>
+    <P><b>标题：</b>{$data.ltitle}</P>
+    <P><b>内容：</b>{$data.lcontent}</P>
+    <P><b>姓名：</b>{$data.lname}</P>
+    <P><b>电话：</b>{$data.ltel}</P>
+    <P><b>邮箱：</b>{$data.lmail}</P>
+    <P><b>用户名：</b>{$data.lser}</P>
+    <P><b>时间：</b>{$data.ltime}</P>
+    <p><b>管理员回复：</b></p>
+    <form action="" method="post">
+    <textarea class="form-control" name="reply" rows="3" placeholder="回复留言" style="width: 300px"></textarea>
+    <input type="button" value="返回" onclick="location='__CONTROLLER__/userLiuyan'"/>&nbsp;&nbsp;<input type="submit" value="提交"/>
+    </form>
+</div>
+<style type="text/css">
+    .userLiuyan{
+        background-color: mediumvioletred;
+    }
+</style>

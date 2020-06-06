@@ -1,0 +1,38 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">新闻管理</font> &gt;<font color="#8AAEB8">查看新闻</font>
+</p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 20px">
+    <table class="table table-hover" style="color:#8AAEB8">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>author</th>
+                <th>create time</th>
+            </tr>
+        </thead>
+        <tbody style="color: #8AAEB8">
+           <foreach name="list" item="v">
+               <tr>
+                   <td>{$v.nid}</td>
+                   <td>{$v.ntitle}</td>
+                   <td>{$v.nauthor}</td>
+                   <td>{$v.ntime}</td>
+                   <td><a href="__CONTROLLER__/detailNews/nid/{$v.nid}" >详情...</a></td>
+               </tr>
+           </foreach>
+        </tbody>
+    </table>
+    <div class="pageList" style="margin-left: 500px;">
+        {$page}
+    </div>
+</div>
+
+<style type="text/css">
+    .viewNews{
+        background-color: mediumvioletred;
+    }
+</style>

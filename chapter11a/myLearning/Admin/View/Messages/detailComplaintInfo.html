@@ -1,0 +1,21 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">消息中心</font> &gt;<font color="#8AAEB8">投诉信息</font>
+    &gt;<font color="#8AAEB8">详细投诉信息</font></p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 50px;color:#8AAEB8;text-align: center ">
+    <div class="container">
+        <p>id：{$data.id}</p>
+        <p>被投诉帖子类型：{$data.post_sort}</p>
+        <p>被投诉帖子id：{$data.post_id}</p>
+        <p>被投诉用户：{$data.bcomuser}</p>
+        <p>投诉用户：{$data.comuser}</p>
+        <p>投诉时间：{$data.comtime}</p>
+        <p>投诉原因：{$data.reason}</p>
+        <p>是否已经处理：{$data.flag}</p>
+        <a href="__CONTROLLER__/complaintInfo">返回</a>
+        &nbsp;
+        <a href="__CONTROLLER__/dealWith/id/{$data.id}">设置为已处理</a>
+    </div>
+</div>
