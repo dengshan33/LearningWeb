@@ -1,6 +1,9 @@
 
 body{
         background: #353f42;
+        background-image: url(../images/2.jpg);;
+    	background-size: 100%;
+   		background-repeat: no-repeat;
 }
  
 *{
@@ -15,7 +18,8 @@ body{
         padding-top: 15px;
         width: 350px;
         height: 400px;
-        background: #FFFFFF;
+        border-radius: 10px;
+        background-color: rgba(240, 255, 255, 0.5);
         /*以下css用于让登录表单垂直居中在界面,可删除*/
         position: absolute;
         top: 50%;

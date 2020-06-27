@@ -1,10 +1,11 @@
+@CHARSET "UTF-8";
 body{
 	margin:0;
 	padding:0;
 }
 body{
 	background:#353f42;
-	background-image: url(../images/2.jpg);;
+	
     background-size: 100%;
    	background-repeat: no-repeat;
 	color:#666;

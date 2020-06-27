@@ -1,0 +1,160 @@
+
+body {
+    /*浏览器文本不可选择*/
+    -moz-user-select: none;
+    /*火狐*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*早期浏览器*/
+    user-select: none;
+    /*文本上显示默认鼠标指针*/
+    cursor: default;
+    
+}
+.content-body{
+	width: 1000px;
+    margin: 0 auto;
+    
+	font-family: 微软雅黑;
+   
+    box-shadow: #666 0px 0px 20px;
+	}
+hr {
+    border: none;
+    margin: 0;
+    height: 1px;
+    background-color: #23262c;
+}
+
+@font-face {
+    /*提取后的标题字体*/
+    font-family: font;
+    src: url('font.otf');
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e1e1e2;
+    border-radius: 4px;
+}
+
+
+
+
+/* 中间样式 */
+
+#middle {
+    background-color: rgba(0,0,0,0.2);
+    
+}
+
+
+#detail ul {
+    list-style: none;
+    color: #a1a3a7;
+    font-size: 30px;
+    padding: 0 30px;
+}
+
+
+
+.more:hover {
+    color: #d4d5db;
+    cursor: pointer;
+}
+
+.match {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 890px;
+    height: 600px;
+}
+
+.match .slide{
+    margin: 20px 0;
+    width: 890px;
+    height: 600px;
+}
+
+.match .match-list{
+    width: 890px;
+    height: 600px;
+    padding: 20px 0;
+    vertical-align: middle;
+    display: inline-block;
+    white-space: nowrap;
+    
+	position:relative;
+}
+
+.match .match-item{
+    width: 250px;
+    height: 300px;
+    float:left;
+    margin: 0 20px 20px ;
+    box-shadow: 0 1px 6px 2px rgba(1,1,1,0.6);
+    border-radius: 2px;
+    border: 2px solid rgba(1,1,1,0.6);
+    transition: all 0.5s;
+    position: relative;
+    cursor: pointer;
+}
+
+.match .match-item:hover{
+    transform: scale(1.05);
+    box-shadow: 0 1px 8px 4px rgba(1,1,1,0.8);
+    border: 2px solid rgba(1,1,1,0.8);
+}
+
+.match .match-item-active{
+    width: 230px;
+    height: 300px;
+    transform: scale(1.05);
+    display: inline-block;
+    margin: 0 10px 10px;
+    box-shadow: 0 1px 10px 4px rgba(1,1,1,0.8);
+    border-radius: 2px;
+    border: 2px solid #68d0ff;
+    position: relative;
+    cursor: pointer;
+}
+
+.match .info{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    z-index: 200;
+    transition: all 0.5s;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.match .match-item-active .info{
+    width: 240px;
+    height: 100px;
+}
+
+.match .match-item:hover > .info{
+    height: 100px;
+}
+
+.match .info p{
+    font-size: 16px;
+    font-family: SourceHanSansCN-Medium, sans-serif;
+    color: #f0f0f0;
+    margin: 5px 0;
+    padding: 0;
+    line-height: 30px;
+    height: 30px;
+    text-shadow: 1px 1px rgba(1,1,1,0.6);
+}
