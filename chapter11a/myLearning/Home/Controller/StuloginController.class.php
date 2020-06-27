@@ -15,6 +15,7 @@ class StuloginController extends CommonController {
 	}
 	
 	public function stulogin(){
+		header('Content-Type:text/html; charset=utf-8');
 		if (IS_POST) {
 			//判断验证码
 			$this->checkVerify(I('post.captcha'));
@@ -25,24 +26,27 @@ class StuloginController extends CommonController {
 			if($rst!==true){
 				$this->error($rst);
 			}
-			$this->success('登录成功，请稍后',U('Index/index'));
+			echo "<script>alert('登录成功!');window.location='".U('Zhuye/index')."'</script>";
+			//$this->success('登录成功，请稍后',U('Zhuye/index'));
 			return;
 		}
 		$this->display();
 	}
 	public function sturegister(){
+		header('Content-Type:text/html; charset=utf-8');
 		if(IS_POST){
 			$this->checkVerify(I('post.captcha'));
 			$rst = $this->create('students','add');
 			if($rst===false){
 				$this->error($rst->getError());
 			}
-			$this->success('用户注册成功',U('Index/index'));
+			echo "<script>alert('注册成功，请登录!');window.location='".U('Index/index')."'</script>";
+			//$this->success('用户注册成功',U('Stusercenter/index'));
 			//注册后自动登录
-			$num = I('post.sno','','trim');
-			$pwd = I('post.pwd','','trim');
-			D('students')->checkUser($num,$pwd);
-			return ;
+			//$num = I('post.sno','','trim');
+			//$pwd = I('post.spwd','','trim');
+			//D('students')->checkUser($num,$pwd);
+			//return ;
 		}
 		$this->display();
 	}
@@ -53,15 +57,19 @@ class StuloginController extends CommonController {
 	}
 	//检查验证码
 	private function checkVerify($code, $id = '') {
+		header('Content-Type:text/html; charset=utf-8');
 		$verify = new \Think\Verify();
 		$rst = $verify->check($code, $id);
 		if($rst!==true){
+			//echo "<script>alert('验证码输入有误!')</script>";
 			$this->error('验证码输入有误');
 		}
 	}
 //退出
 	public function logout(){
+		header('Content-Type:text/html; charset=utf-8');
 		session('[destroy]');
-		$this->success('退出成功',U('Index/index'));
+		echo "<script>alert('退出成功!');window.location='".U('Index/index')."'</script>";
+		//$this->success('退出成功',U('Index/index'));
 	}
 }
