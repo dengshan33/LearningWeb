@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>HaFood</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="__PUBLIC__/home/assets/images/favicon.ico" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/bootstrap.min.css">
+
+    <!--====== Pe Icon 7 Stroke css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/Pe-icon-7-stroke.css">
+
+    <!--====== Ion Icons css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/kaoyan/css/bootstrap.css">
+		<link rel="stylesheet" href="__PUBLIC__/home/kaoyan/css/main.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/magnific-popup.css">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/animate.min.css">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/nice-select.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/style.css">
+
+    <style>
+.button {
+    background-color: White;
+    border: none;
+  
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+    <!--====== PRELOADER  PART START ======-->
+
+    <div id="preloader">
+        <div id="loader">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!--====== PRELOADER  PART ENDS ======-->
+
+    <!--====== SEARCH PART START ======-->
+
+    <div class="search-box">
+        <div class="search-header">
+            <div class="container mt-60">
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="search-title">Search</h5> <!-- search title -->
+                    </div>
+                    <div class="col-6">
+                        <div class="search-close text-right">
+                            <button class="search-close-btn">Close <span></span><span></span></button>
+                        </div> <!-- search close -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- search header -->
+        <div class="search-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="search-form">
+                            <form action="#">
+                                <input type="text" placeholder="Search for Products">
+                                <button><i class="flaticon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- search body -->
+    </div>
+
+    <!--====== SEARCH PART ENDS ======-->
+
+    <!--====== SHOPPING CART PART START ======-->
+
+    <div class="shopping-cart-wrapper">
+        <div class="shopping-cart-canvas">
+            <div class="shopping_cart">
+                <div class="shopping_cart-top-bar d-flex justify-content-between">
+                    <h6>欢迎您！{$userinfo.sname}</h6>
+                    <button class="shopping-cart-close">
+                        <i class="ion ion-md-add"></i>
+                    </button>
+                </div>
+                <div class="shopping_cart-list-items mt-30">
+                    <if condition="$userinfo.spic eq 0 "><img  width="200px" height="200px" src="__PUBLIC__/Uploads/stuPic/11.jpg" alt=""/>
+										<else /><img  width="200px" height="200px" src="__PUBLIC__/Uploads/stuPic/{$userinfo.spic}" />
+										</if>
+                </div> <!-- shopping_cart list items -->
+                <div class="shopping_cart-btn">
+                    <div class="total pt-35 d-flex justify-content-between">
+                        <h5>学号:</h5>
+                        <p>{$userinfo.sno}</p>
+                    </div>
+                    <div class="cart-btn pt-25">
+                        <a class="main-btn"  href="{:u('Stusercenter/index')}">我的中心</a>
+                        
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <!--====== SHOPPING CART PART ENDS ======-->
+
+    <!--====== HEADER  PART START ======-->
+
+  
+        <div class="navigation fixed-top">
+            <div class="container-fluid pl-60 pr-60">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="__PUBLIC__/home/assets/images/logo-4.png" alt="Logo" width="120px" height="50px">
+                            </a> <!-- Logo -->
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button> <!-- navbar-toggler -->
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav m-auto">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="{:u('zhuye/index')}">首页</a>
+                                  
+                                    </li>
+                                    <li class="nav-item"><a href="{:u('kaoyan/index')}">考研</a></li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="{:u('class/index')}">课程</a>
+                                       
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="page-scroll" href="{:u('job/index')}">就业</a>
+                                        
+                                    </li>
+                                    <li class="nav-item"><a class="page-scroll" href="product-grid.html">论坛</a></li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="{:u('english/index')}">四六级</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="navbar-icon d-none d-sm-block">
+                                <ul>
+                                    <li><a class="search-open" href="#"><i class="pe-7s-search"></i></a></li>
+                                    <li><a class="shopping-cart-open" href="#"><i class="pe-7s-cart"></i></a></li>
+                                </ul>
+                            </div>
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navigation -->
+  
+
+    <!--====== HEADER  PART ENDS ======-->
+<div class="banner-a">
+<div class="main-wrapper-first">
+		<header>
+				<div class="container">
+					<div class="header-wrap">
+						<div class="header-top d-flex justify-content-between align-items-center">
+							<div class="logo" style="margin-left: 50px;">
+								<img src="__PUBLIC__/home/kaoyan/img/logo-4.png">
+							</div>
+							<div class="main-menubar d-flex align-items-center">
+								<p style="margin-right:50px ;margin-top: 30px; font-size: 20px;color: white;">欢迎您！</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="banner-area">
+				<div class="container">
+					<div class="row justify-content-center height align-items-center">
+						<div class="col-lg-8">
+							<div class="banner-content text-center">
+								<h1 class="text-white text-uppercase">welcome to qihang</h1>
+								<a href="#1" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Get Started</span><span class="lnr lnr-arrow-right"></span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a name="1"></a>
+			<section class="featured-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="single-feature d-flex flex-wrap justify-content-between">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="lnr lnr-sun"></span>
+								</div>
+								<div class="desc">
+									<a href="#2"><h6 class="title text-uppercase">名师推荐</h6></a>
+									<p>走进每一个学生的心灵，拥有姹紫嫣红的春天</p>
+								</div>
+							</div>
+						</div>
+ 				
+						<div class="col-md-4">
+							<div class="single-feature d-flex flex-wrap justify-content-between">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="lnr lnr-code"></span>
+								</div>
+								<div class="desc">
+									<a href="#3"><h6 class="title text-uppercase">全部课程</h6></a>
+									<p>数学、英语、政治等各个专业视频课程应有尽有！</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="single-feature d-flex flex-wrap justify-content-between">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="lnr lnr-clock"></span>
+								</div>
+								<div class="desc">
+									<a href="#4"><h6 class="title text-uppercase">学校简介</h6></a>
+									<p>全国的学校都在这里！</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="service-area">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-8">
+							<div class="section-title text-center">
+								<h1 class="text-white"><a name="2"></a>名师推荐</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+					 <foreach name="list3" item="v">
+						<div class="col-lg-3 col-sm-6">
+							<div class="single-service">
+								<div class="thumb" style="background: url(__PUBLIC__/home/kaoyan/img/{$v.jpic});">
+									<div class="overlay overlay-content d-flex justify-content-center align-items-center">
+										<a href="{:U('kaoyan/teacher','jid='.$v['jid'])}" class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">{$v.jname}</span><span class="lnr lnr-arrow-right"></span></a>
+									</div>
+								</div>
+								<div class="desc">
+									<h3 class="text-uppercase text-white">{$v.tspec}</h6>
+									<p class="text-white" style="margin: 15px;">{$v.jprofile}</p>
+									<p class="text-white">{$v.jname}</p>
+								</div>
+							</div>
+						</div>
+					</foreach>
+				</div>
+				<div class="pageList" style="margin-left: 800px;font-size:30px" >
+       			 		{$page3}
+   			 		</div>
+				</div>
+			</section>
+		</div>
+		
+		<div class="main-wrapper-first">
+			<section class="service-area">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-8">
+							<div class="section-title text-center">
+								<h1 class="text-white"><a name="3"></a>全部课程</h3>
+							</div>
+						</div>
+					</div>
+					<div class="main-menubar d-flex align-items-center">
+						<a href="{:u('kaoyan/index')}"><p style="margin-left: 20px; font-size: 20px;color: white;">综合</p></a>
+						<a href="{:u('kaoyan/hot')}#"><p style="margin-left: 20px; font-size: 20px;color: white;">热门</p></a>
+						<a href="{:u('kaoyan/latest')}"><p style="margin-left: 20px; font-size: 20px;color: white;">最新</p></a>
+					</div>
+					<div class="row">
+					<foreach name="list2" item="v">
+						<div class="col-lg-3 col-sm-6">
+							<div class="single-service">
+							
+								<div class="thumb" style="background: url(__PUBLIC__/home/class/images/{$v.tpic});">
+									<div class="overlay overlay-content d-flex justify-content-center align-items-center">
+										<a href="{:U('class/detail','tid='.$v['tid'])}" class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">{$v.tname}</span><span class="lnr lnr-arrow-right"></span></a>
+									</div>
+								</div>
+							
+								<div class="desc">
+									<h6 class="text-uppercase text-white">{$v.tname}</h6>
+									<p class="text-white">{$v.tprofile}</p>
+								</div>
+									<div>
+									<a class="button">收藏</a>
+									<a class="button">选课</a>
+								</div>
+							</div>
+						</div>
+					</foreach>
+					</div>
+					<div class="pageList" style="margin-left: 800px;font-size:30px" >
+       			 		{$page2}
+   					 </div>
+				</div>
+			</section>
+		</div>
+		
+		<div class="main-wrapper-first">
+			<section class="service-area">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-8">
+							<div class="section-title text-center">
+								<h1 class="text-white"><a name="4"></a>学校简介</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+					<foreach name="list1" item="v">
+						<div class="col-lg-3 col-sm-6">
+							<div class="single-service">
+								<div class="thumb" style="background: url(__PUBLIC__/home/kaoyan/img/{$v.kpic});">
+									<div class="overlay overlay-content d-flex justify-content-center align-items-center">
+										<a href="{:U('kaoyan/school','kid='.$v['kid'])}" class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">{$v.kname}</span><span class="lnr lnr-arrow-right"></span></a>
+									</div>
+								</div>
+								<div class="desc">
+									<h6 class="text-uppercase text-white">{$v.kname}</h6>
+									<p class="text-white">{$v.tprofile}</p>
+								</div>
+							</div>
+						</div>
+					</foreach>
+				
+				</div>
+				<div class="pageList" style="margin-left: 800px;font-size:30px" >
+       			 		{$page1}
+   					 </div>
+				
+			</section>
+		</div>
+</div>
+
+    <!--====== BACK TO TOP ======-->
+    <div class="back-to-top">
+        <a href="">
+            <i class="ion ion-md-arrow-up"></i>
+        </a>
+    </div>
+    <!--====== BACK TO TOP ======-->
+
+
+
+    <!--====== jquery js ======-->
+    <script src="__PUBLIC__/home/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="__PUBLIC__/home/assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="__PUBLIC__/home/assets/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/home/assets/js/popper.min.js"></script>
+
+    <!--====== Slick js ======-->
+    <script src="__PUBLIC__/home/assets/js/slick.min.js"></script>
+
+    <!--====== Isotope js ======-->
+    <script src="__PUBLIC__/home/assets/js/isotope.pkgd.min.js"></script>
+
+    <!--====== Images Loaded js ======-->
+    <script src="__PUBLIC__/home/assets/js/imagesloaded.pkgd.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="__PUBLIC__/home/assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Nice Select js ======-->
+    <script src="__PUBLIC__/home/assets/js/jquery.nice-select.min.js"></script>
+
+    <!--====== Ajax Contact js ======-->
+    <script src="__PUBLIC__/homeadmin/assets/js/ajax-contact.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="__PUBLIC__/home/assets/js/main.js"></script>
+
+</body>
+
+</html>
