@@ -2,7 +2,8 @@
     padding: 0;
 }/*去掉页面样式，通用选择器*/
 /*标签选择器*/
-.context{background: #50A3A2;
+.context{
+	background: #50A3A2;
     position: absolute;
     left: 0;
     top:0;
