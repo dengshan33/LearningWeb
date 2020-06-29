@@ -1,0 +1,28 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">就业信息</font> &gt;<font color="#8AAEB8">行业信息</font>
+    &gt;<font color="#8AAEB8">删除行业信息</font>
+</p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 20px">
+    <p style="color:#8AAEB8;">您好，{$adminName}管理员，您将执执行删除行业信息操作</p>
+    <br />
+    <p style="color:#8AAEB8;">被删除行业id为：{$nid}</p>
+    <br />
+
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="adminpassword" style="color:#8AAEB8;">请输入管理员密码确认操作：</label>
+            <input type="password" style="width: 23%"  name="password" class="form-control" id="adminpassword" placeholder="Please input adminstrator password">
+        </div>
+        <a class="btn btn-default" href="__CONTROLLER__/detailind/nid/{$nid}">取消</a>
+        <button type="submit" class="btn btn-default">确认</button>
+    </form>
+</div>
+
+<style type="text/css">
+    .viewNews{
+        background-color: mediumvioletred;
+    }
+</style>
