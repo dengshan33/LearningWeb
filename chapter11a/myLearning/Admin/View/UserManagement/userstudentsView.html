@@ -1,0 +1,64 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">用户管理</font> &gt;<font color="#8AAEB8">查看学生信息</font> </p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 20px">
+    <table class="table table-hover" style="color: #8AAEB8">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>性别</th>
+            <th>联系电话</th>
+            <th>邮箱</th>
+            <th>学校</th>
+            <th>学院</th>
+            <th>年级</th>
+            <th>专业</th>
+            <th>班级</th>
+           <th>是否冻结</th>
+           <th>注册时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="v">
+            <tr style="color: #8AAEB8">
+                <td>{$v.sid}</td>
+                <td>{$v.sname}</td>
+                <td>{$v.sno}</td>
+                <td>{$v.ssex}</td>
+                <td>{$v.sphone}</td>
+                <td>{$v.semail}</td>
+                 <td>{$v.school}</td>
+                <td>{$v.scolle}</td>
+                <td>{$v.syear}</td>
+                <td>{$v.smajor}</td>
+                <td>{$v.sclass}</td>
+                <td><if condition="$v.freeze eq 0 "> 未冻结
+					<else />已冻结
+					</if></td></td>
+                <td>{$v.stime}</td>
+                <td><if condition="$v.freeze eq 1 "><a href="{:U('nofreezeS','fid='.$v['sid'])}">解冻</a>
+					<else /><a href="{:U('isfreezeS','fid='.$v['sid'])}">冻结</a>
+					</if>
+				</td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+    <div class="pageList" style="margin-left: 500px;">
+        {$page}
+    </div>
+    <div class="search" style="margin-top: 15px">
+
+            <a href="__CONTROLLER__/searchUser" class="btn btn-default">搜索</a>
+        </form>
+    </div>
+</div>
+<style type="text/css">
+    .userView{
+        background-color: mediumvioletred;
+    }
+</style>
