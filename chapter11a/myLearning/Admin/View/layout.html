@@ -10,8 +10,8 @@
     <script src="__PUBLIC__/admin/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link href="__PUBLIC__/admin/css/layout.css" rel="stylesheet" >
 </head>
-<body style="background-color: #F2F2F2;">
-<div style="width:1200px;margin-left: 10px;">
+<body style="background:url(__PUBLIC__/home/images/body-bg.jpg)no-repeat center 0px;background-attachment:fixed;">
+<div style="width:1200px;margin-left: 20px; background: rgba(255, 255, 255, 0.8);">
     <div class="1">
         <p style="margin-top: 20px;"><font color="#8AAEB8" style="font-size: 16px;">
             <b>启航网后台管理</b></font> <a href="__MODULE__/Login/login" style="float:right;padding-right: 50px;"><img src="__PUBLIC__/admin/icon/icons8-exit.png" height="18">&nbsp;退出</a>
@@ -21,10 +21,10 @@
 
     </div>
     <hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
-    <div class="row" >
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <div  style="height: 668px;width: 200px;background-color: teal;">
-                <div class="userManage">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" >
+            <div  style="height: 668px;width: 200px;background-color: #FF9900;margin-left:5px;">
+                <div class="userManage" >
                     <button class="user" style="width: 200px;height: 35px;color: white;font-size: 16px;">
                         <span class="glyphicon glyphicon-user"></span>
                         用户管理&nbsp;&nbsp;&nbsp;</button><br />
@@ -67,9 +67,9 @@
                     <button class="messages" style="width: 200px;height: 35px;font-size: 16px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                         公共管理&nbsp;&nbsp;&nbsp;</button><br>
-                    <button class="messagesAction complaintInfo" onclick="location='__MODULE__/Messages/complaintInfo'" style="width: 200px;">推荐学校<span class="badge">{$Think.session.complaint}</span></button>
-                    <button class="messagesAction userLiuyan" onclick="location='__MODULE__/Messages/userLiuyan'" style="width: 200px;">推荐老师<span class="badge">{$Think.session.userLiuyan}</span></button>
-                	<button class="messagesAction userLiuyan" onclick="location='__MODULE__/Messages/userLiuyan'" style="width: 200px;">推荐书籍<span class="badge">{$Think.session.userLiuyan}</span></button>
+                    <button class="messagesAction complaintInfo" onclick="location='__MODULE__/Pub/school'" style="width: 200px;">推荐学校<span class="badge">{$Think.session.complaint}</span></button>
+                    <button class="messagesAction userLiuyan" onclick="location='__MODULE__/Pub/teacher'" style="width: 200px;">推荐老师<span class="badge">{$Think.session.userLiuyan}</span></button>
+                	<button class="messagesAction userLiuyan" onclick="location='__MODULE__/Pub/book'" style="width: 200px;">推荐书籍<span class="badge">{$Think.session.userLiuyan}</span></button>
                 
                 </div>
 
@@ -93,7 +93,7 @@
         </div>
     </div>
 </div>
-
+</div>
 
 <!-- <script type="text/javascript">
     $(document).ready(function(){
