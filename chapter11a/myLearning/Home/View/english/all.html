@@ -222,12 +222,13 @@
 										<h3 class="course_title"><a href="{:U('english/detail','tid='.$v['tid'])}">{$v.tname}</a></h3>
 										<div class="course_teacher">{$v.teachername}</div>
 										<div class="course_text">
-											<p>{$v.tprofile}</p>
+											<p>{$v.tprofile|msubstr=0,20,'utf-8',true}</p>
 										</div>
 									</div>
 									<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a class="button">收藏</a>
-									<a class="button">选课</a>
+									<a class="button" href="{:U('Stusercenter/addcollecttj','s='.$v['tno'])}">收藏</a>
+									<a class="button" href="{:U('Stusercenter/addcoursetj','s='.$v['tno'])}">选课</a>
+								
 								</div>
 								</div>
 							</div>

@@ -281,8 +281,8 @@
 									</div>
 								</div>
 								<div class="desc">
-									<h3 class="text-uppercase text-white">{$v.tspec}</h6>
-									<p class="text-white" style="margin: 15px;">{$v.jprofile}</p>
+									<h3 class="text-uppercase text-white">{$v.tspec|msubstr=0,6,'utf-8',true}</h3>
+									<p class="text-white" style="margin: 15px;">{$v.jprofile|msubstr=0,20,'utf-8',true}</p>
 									<p class="text-white">{$v.jname}</p>
 								</div>
 							</div>
@@ -318,17 +318,17 @@
 							
 								<div class="thumb" style="background: url(__PUBLIC__/Uploads/couPic/{$v.tpic});">
 									<div class="overlay overlay-content d-flex justify-content-center align-items-center">
-										<a href="{:U('class/detail','tid='.$v['tid'])}" class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">{$v.tname}</span><span class="lnr lnr-arrow-right"></span></a>
+										<a href="{:U('class/detail','tid='.$v['tno'])}" class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">{$v.tname}</span><span class="lnr lnr-arrow-right"></span></a>
 									</div>
 								</div>
 							
 								<div class="desc">
-									<h6 class="text-uppercase text-white">{$v.tname}</h6>
-									<p class="text-white">{$v.tprofile}</p>
+									<h6 class="text-uppercase text-white">{$v.tname|msubstr=0,10,'utf-8',true}</h6>
+									<p class="text-white">{$v.tprofile|msubstr=0,30,'utf-8',true}</p>
 								</div>
 									<div>
-									<a class="button">收藏</a>
-									<a class="button">选课</a>
+									<a class="button" href="{:U('Stusercenter/addcollecttj','s='.$v['tno'])}">收藏</a>
+									<a class="button" href="{:U('Stusercenter/addcoursetj','s='.$v['tno'])}">选课</a>
 								</div>
 							</div>
 						</div>
@@ -361,8 +361,8 @@
 									</div>
 								</div>
 								<div class="desc">
-									<h6 class="text-uppercase text-white">{$v.kname}</h6>
-									<p class="text-white">{$v.tprofile}</p>
+									<h6 class="text-uppercase text-white">{$v.kname|msubstr=0,10,'utf-8',true}</h6>
+									<p class="text-white">{$v.tprofile|msubstr=0,30,'utf-8',true}</p>
 								</div>
 							</div>
 						</div>

@@ -69,7 +69,7 @@
 							               
 							                    <img height="300px" src="__PUBLIC__/Uploads/couPic/{$nn.tpic}" width="100%" />
 							                    <div class="info">
-							                        <p>{$nn.tname|msubstr=0,8,'utf-8',true}</p>							                     
+							                        <p><a href="{:U('class/detail','tid='.$nn['tno'])}">{$nn.tname|msubstr=0,8,'utf-8',true}</a></p>							                     
 							                        <p style="font-size: 15px;">课程号：{$nn.tno}</p>
 							                         <p style="font-size: 15px;">收藏时间：{$nn.rtime}</p>
 							                    </div>

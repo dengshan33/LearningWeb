@@ -51,7 +51,7 @@ class ClassController extends CommonController {
   public function detail(){
    	$b = M('tcourse');
    	$a=I('tid');
-   	$res = $b->where("tid='{$a}'")->select();
+   	$res = $b->where("tno='{$a}'")->select();
    	
    	$userNum=$_SESSION['user_number'];
 		$student=M('Students');

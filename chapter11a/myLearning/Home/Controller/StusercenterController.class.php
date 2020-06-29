@@ -56,6 +56,53 @@ class StusercenterController extends CommonController {
 	    	$this->error('用户不存在');
 	    }
     }
+    
+//修改个人信息
+	public function changeinfo(){
+		header('Content-Type:text/html; charset=utf-8');
+    	$student = M('Students');
+    	$num=$_SESSION['user_number'];
+    	$userinfo=$student->where("sno='$num'")->find();
+		
+    	if ($_FILES['fpic']){
+    		
+    		//文件上传配置
+    		$upload = new UploadFile();// 实例化上传类
+    		$upload->maxSize  = 1000000 ;// 设置附件上传大小
+    		$upload->allowExts  = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    		$upload->savePath =  './Public/Uploads/stuPic/';// 设置附件上传目录
+    		$upload->saveRule = 'time';
+    			
+    		//开始上传
+    		if(!$upload->upload()){
+    			$this->error($upload->getErrorMsg());
+    		}else{
+    			$info1 =  $upload->getUploadFileInfo();
+    		}
+    		
+    		$info['semail']=$_POST['semail'];
+    		$info['sphone']=$_POST['sphone'];
+    		$info['scolle']=$_POST['scolle'];
+    		$info['smajor']=$_POST['smajor'];
+    		$info['spic'] =$info1[0]['savename'];
+    		$info['syear']=$_POST['syear'];
+    		$info['sclass']=$_POST['sclass'];
+    		
+    		$chack['sno']=$num;
+    		$result=$student->where($chack)->save($info);//更改信息
+    		//$result=$Findthings->add($info);
+    		if ($result){
+    			echo "<script>alert('修改成功!');window.location='".U('Stusercenter/changeinfo')."'</script>";;
+    		}else{
+    			
+    			$this->error('修改失败');
+    		}
+    			  		
+    		
+    	}
+    	$this->assign('userinfo',$userinfo);
+    	$this->display();
+	}
     //我的老师课程
 	public function mycourse(){
    			
@@ -88,7 +135,7 @@ class StusercenterController extends CommonController {
 	    $this->assign('page',$show);
 	    $this->display();
    }
-   //选的推荐课程
+   //我的推荐课程
 	public function tjcourse(){
    			
    		$num=$_SESSION['user_number'];
@@ -245,20 +292,6 @@ class StusercenterController extends CommonController {
 	    $this->display();
    }
    
-   //取消课程收藏
-	public function deleteCollect(){
-  		header('Content-Type:text/html;charset=utf-8');
-    	$Liuyan=M('Rcollect');
-    	$ids = rtrim($_GET['sid'],',');
-    	if ($Liuyan->where('rid in('.$ids.')')->delete()){
-    		echo "<script>alert('退课成功!');window.location='".U('Stusercenter/mycourse')."'</script>";
-    		//$this->success('退课成功，请稍后',U('Stusercenter/mycourse'));
-    		//$this->success('退课成功，请稍后');
-    	}else{
-    		echo "<script>alert('退课失败!')</script>";
-    	}
-   }
-   
 //我的推荐收藏
 	public function mycollecttj(){
    			
@@ -291,90 +324,68 @@ class StusercenterController extends CommonController {
 	    $this->assign('page',$show);
 	    $this->display();
    }
-	//修改个人信息
-	public function changeinfo(){
+
+	
+	//推荐课程选课
+	public function addcoursetj(){
 		header('Content-Type:text/html; charset=utf-8');
-    	$student = M('Students');
-    	$num=$_SESSION['user_number'];
-    	$userinfo=$student->where("sno='$num'")->find();
-		
-    	if ($_FILES['fpic']){
+    	$Add = M('Selectcourtj');
+   		$num=$_SESSION['user_number'];	
+    	$ids = rtrim($_GET['s'],',');	
+    	//$ids=I('s');
+        $c['sstuno']=$num;
+        $a['sno'] = $ids;
+		$a['_complex'] = $c;
+        $aad=$Add->where($a)->where($c)->find();//判断是否已经选过
+        //$aa=$Add->where($ids)->find();
+        if($aad){
+        	echo "<script>alert('该课程已选!');window.history.go(-1)</script>";
     		
-    		//文件上传配置
-    		$upload = new UploadFile();// 实例化上传类
-    		$upload->maxSize  = 1000000 ;// 设置附件上传大小
-    		$upload->allowExts  = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-    		$upload->savePath =  './Public/Uploads/stuPic/';// 设置附件上传目录
-    		$upload->saveRule = 'time';
-    			
-    		//开始上传
-    		if(!$upload->upload()){
-    			$this->error($upload->getErrorMsg());
+        	//$this->error('该课程已选');
+        }else{
+        	$info['sno']=$ids;
+    		$info['sstuno']=$num;
+    		$result=$Add->add($info);//添加信息
+			if ($result){
+				echo "<script>alert('选课成功!');window.history.go(-1)</script>";
+    			//$this->success('选课成功');
     		}else{
-    			$info1 =  $upload->getUploadFileInfo();
+    			//$this->error('选课失败');
+    			echo "<script>alert('选课失败!');window.history.go(-1)</script>";
     		}
-    		
-    		$info['semail']=$_POST['semail'];
-    		$info['sphone']=$_POST['sphone'];
-    		$info['scolle']=$_POST['scolle'];
-    		$info['smajor']=$_POST['smajor'];
-    		$info['spic'] =$info1[0]['savename'];
-    		$info['syear']=$_POST['syear'];
-    		$info['sclass']=$_POST['sclass'];
-    		
-    		$chack['sno']=$num;
-    		$result=$student->where($chack)->save($info);//更改信息
-    		//$result=$Findthings->add($info);
-    		if ($result){
-    			echo "<script>alert('修改成功!');window.location='".U('Stusercenter/changeinfo')."'</script>";;
+        }
+    	
+	}
+	//推荐课程收藏
+	public function addcollecttj(){
+		header('Content-Type:text/html; charset=utf-8');
+    	$Add = M('Rcollecttj');
+   		$num=$_SESSION['user_number'];	
+    	$ids = rtrim($_GET['s'],',');	
+    	//$ids=I('s');
+        $c['rno']=$num;
+        $a['ridentify'] = $ids;
+		$a['_complex'] = $c;
+        $aad=$Add->where($a)->where($c)->find();//判断是否已经收藏
+        //$aa=$Add->where($ids)->find();
+        if($aad){
+        	//$this->error('该课程已收藏');
+        	echo "<script>alert('该课程已收藏!');window.history.go(-1)</script>";
+        }else{
+        	$info['ridentify']=$ids;
+    		$info['rno']=$num;
+    		$result=$Add->add($info);//添加信息
+			if ($result){
+    			//$this->success('收藏成功');
+    			echo "<script>alert('收藏成功!');window.history.go(-1)</script>";
     		}else{
-    			$this->error('修改失败');
+    			//$this->error('收藏失败');
+    			echo "<script>alert('收藏失败!');window.history.go(-1)</script>";
     		}
-    			  		
-    		
-    	}
-    	$this->assign('userinfo',$userinfo);
-    	$this->display();
+        }
+    	
 	}
 	
-	//选课
-	public function addcourse(){
-	header('Content-Type:text/html; charset=utf-8');
-    	$Returns = M('Returns');
-    	if ($_FILES['rpic']){
-    		
-    		//文件上传配置
-    		$upload = new UploadFile();// 实例化上传类
-    		$upload->maxSize  = 1000000 ;// 设置附件上传大小
-    		$upload->allowExts  = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-    		$upload->savePath =  './Public/Uploads/returnsPic/';// 设置附件上传目录
-    		$upload->saveRule = 'time';
-    			
-    		//开始上传
-    		if(!$upload->upload()){
-    			$this->error($upload->getErrorMsg());
-    		}else{
-    			$info =  $upload->getUploadFileInfo();
-    		}
-    			
-    		$list =$Returns->find();
-    		
-    		$user['rpname']=$_POST['rname'];
-    		$user['rdescrip']=$_POST['rdescrip'];
-    		$user['rpicture'] =$info[0]['savename'];
-    		$user['raddress']=$_POST['raddress'];
-    		$user['rphone']=$_POST['rtel'];
-    		$user['rser']=$_SESSION['user_name'];
-    		$result=$Returns->add($user);
-    		if ($result){
-    			$this->success('添加成功');
-    		}else{
-    			$this->error('添加失败');
-    		}
-    			  		
-    		
-    	}
-	}
    //退课
    public function deleteCour(){
   		header('Content-Type:text/html;charset=utf-8');
