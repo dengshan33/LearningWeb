@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>HaFood</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="__PUBLIC__/home/assets/images/favicon.ico" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/bootstrap.min.css">
+
+    <!--====== Pe Icon 7 Stroke css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/Pe-icon-7-stroke.css">
+
+    <!--====== Ion Icons css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/home/kaoyan/css/bootstrap.css">
+		<link rel="stylesheet" href="__PUBLIC__/home/kaoyan/css/main.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/magnific-popup.css">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/animate.min.css">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/nice-select.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="__PUBLIC__/home/assets/css/style.css">
+     <link rel="stylesheet" href="__PUBLIC__/home/job/css/linearicons.css">
+			<link rel="stylesheet" href="__PUBLIC__/home/job/css/font-awesome.min.css">
+			<link rel="stylesheet" href="__PUBLIC__/home/job/css/bootstrap.css">
+			<link rel="stylesheet" href="__PUBLIC__/home/job/css/magnific-popup.css">
+			<link rel="stylesheet" href="__PUBLIC__/home/job/css/nice-select.css">					
+			<link rel="stylesheet" href="__PUBLIC__/home/job/css/animate.min.css">
+			<link rel="stylesheet" href="__PUBLIC__/home/job/css/owl.carousel.css">
+			<link rel="stylesheet" href="__PUBLIC__/home/job/css/main.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var xhr = null;
+        $('.zhuce_gongsimingcheng').keyup(function() {
+            if (xhr) {
+                xhr.abort(); //如果存在ajax的请求，就放弃请求  
+            }
+            var inputText = $.trim(this.value);
+            if (inputText != "") { //检测键盘输入的内容是否为空，为空就不发出请求  
+                xhr = $.ajax({
+                    type: 'GET',
+                    url: '{:U('Zhuye/find/get_ajax_crmname')}',
+                    cache: false,
+                    //不从浏览器缓存中加载请求信息  
+                    data: "keyword=" + inputText,
+                    //向服务器端发送的数据  
+                    dataType: 'json',
+                    //服务器返回数据的类型为json  
+                    success: function(json) {
+                        if (json.length != 0) { //检测返回的结果是否为空  
+                            var lists = "<ul>";
+                            $.each(json,
+                            function() {
+                                lists += "<li>" + this.tname + "</li>"; //遍历出每一条返回的数据  
+                            });
+                            lists += "</ul>";
+                            $("#searchBox").html(lists).show(); //将搜索到的结果展示出来
+                            $('li').live('click',function(){
+                                $(".zhuce_gongsimingcheng").val($(this).text()); //点击某个li就会获取当前的值
+                                $("#searchBox").hide();
+                            });
+                        } else {
+                            $("#searchBox").hide();
+                        }
+                    }
+                });
+            } else {
+                $("#searchBox").hide(); //没有查询结果就隐藏搜索框
+            }
+        });
+    });
+
+</script>
+
+</head>
+
+<body>
+
+    <!--====== PRELOADER  PART START ======-->
+
+    <div id="preloader">
+        <div id="loader">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!--====== PRELOADER  PART ENDS ======-->
+
+    <!--====== SEARCH PART START ======-->
+<div class="search-box">
+        <div class="search-header">
+            <div class="container mt-60">
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="search-title">Search</h5> <!-- search title -->
+                    </div>
+                    <div class="col-6">
+                        <div class="search-close text-right">
+                            <button class="search-close-btn">Close <span></span><span></span></button>
+                        </div> <!-- search close -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- search header -->
+        <div class="search-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="search-form">
+                            <form action="{:u('zhuye/find')}">
+                                <input  type="text" id="keyword" name="keyword" />
+                              	<button type="submit">搜索</button>
+                            </form>
+                        </div>
+                        <div id="searchBox" display: none"></div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- search body -->
+    </div>
+
+  
+    <!--====== SEARCH PART ENDS ======-->
+
+    <!--====== SHOPPING CART PART START ======-->
+
+    <div class="shopping-cart-wrapper">
+        <div class="shopping-cart-canvas">
+            <div class="shopping_cart">
+                <div class="shopping_cart-top-bar d-flex justify-content-between">
+                    <h6>欢迎您！{$userinfo.sname}</h6>
+                    <button class="shopping-cart-close">
+                        <i class="ion ion-md-add"></i>
+                    </button>
+                </div>
+                <div class="shopping_cart-list-items mt-30">
+                    <if condition="$userinfo.spic eq 0 "><img  width="200px" height="200px" src="__PUBLIC__/Uploads/stuPic/11.jpg" alt=""/>
+										<else /><img  width="200px" height="200px" src="__PUBLIC__/Uploads/stuPic/{$userinfo.spic}" />
+										</if>
+                </div> <!-- shopping_cart list items -->
+                <div class="shopping_cart-btn">
+                    <div class="total pt-35 d-flex justify-content-between">
+                        <h5>学号:</h5>
+                        <p>{$userinfo.sno}</p>
+                    </div>
+                    <div class="cart-btn pt-25">
+                        <a class="main-btn"  href="{:u('Stusercenter/index')}">我的中心</a>
+                        
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <!--====== SHOPPING CART PART ENDS ======-->
+
+    <!--====== HEADER  PART START ======-->
+
+  
+        <div class="navigation fixed-top">
+            <div class="container-fluid pl-60 pr-60">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="__PUBLIC__/home/assets/images/logo-4.png" alt="Logo" width="120px" height="50px">
+                            </a> <!-- Logo -->
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button> <!-- navbar-toggler -->
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav m-auto">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="{:u('zhuye/index')}">首页</a>
+                                  
+                                    </li>
+                                    <li class="nav-item"><a href="{:u('kaoyan/index')}">考研</a></li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="{:u('class/index')}">课程</a>
+                                       
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="page-scroll" href="{:u('job/index')}">就业</a>
+                                        
+                                    </li>
+                                    <li class="nav-item"><a class="page-scroll" href="{:u('discuss/index')}">讨论</a></li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="{:u('english/index')}">四六级</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="navbar-icon d-none d-sm-block">
+                                <ul>
+                                    <li><a class="search-open" href="#"><i class="pe-7s-search"></i></a></li>
+                                    <li><a class="shopping-cart-open" href="#"><i class="pe-7s-cart"></i></a></li>
+                                </ul>
+                            </div>
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navigation -->
+  
+
+    <!--====== HEADER  PART ENDS ======-->
+<div class="banner-a">
+
+							<!-- start banner Area -->
+		
+		
+			<!-- End feature-cat Area -->
+			
+			<!-- Start post Area -->
+			<section class="post-area section-gap">
+				<div class="container">
+					<div class="row justify-content-center d-flex">
+						<div class="col-lg-8 post-list">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<form action="search.html" class="serach-form-area" align="right"> 
+								<div class="row justify-content-center form-wrap">
+									<div class="col-lg-4 form-cols">
+										<input type="text" class="form-control" name="search" placeholder="你在找什么？">
+									</div>
+									
+									<div class="col-lg-3 form-cols">
+										<div class="default-select" id="default-selects2">
+											<select>
+												<option value="1">所有类别</option>
+												<option value="2">老师</option>
+												<option value="3">工程师</option>
+												<option value="4">四六级</option>
+												<option value="5">前端开发</option>
+												<option value="6">后端开发</option>
+												<option value="7">人工智能</option>
+												
+											</select>
+										</div>										
+									</div>
+									<div class="col-lg-2 form-cols">
+									    <button type="button" class="btn btn-info">
+									      <span class="lnr lnr-magnifier"></span>搜索
+									    </button>
+									</div>
+								</div>
+							</form>	
+							<br>
+							<foreach name="list1" item="v">
+							<div class="single-post d-flex flex-row">
+								<!--  <div class="thumb">
+									<img src="img/post.png" alt="">
+								</div>-->
+								<div class="details">
+									<div class="title d-flex flex-row justify-content-between">
+										<div class="titles">
+											<a href="single.html"><h4>{$v.htitle}</h4></a>
+																
+										</div>
+										<ul class="btns" align="right">
+											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+											<li><a href="{:U('discuss/detail','hid='.$v['hid'])}">查看</a></li>
+										</ul>
+									</div>
+									<p>
+										讨论概要：{$v.hprofile}
+									</p>
+									<h5>发布人：{$v.hfoundername}</h5>
+									<h5>发布时间：{$v.htime}</h5>
+								</div>
+							</div>
+							</foreach>
+							<div>{$page1}</div>
+						</div>
+					
+						
+						<div class="col-lg-4 sidebar">
+						<div class="sidebar">
+							<div class="single-slidebar">
+								<div class="single-slidebar">
+								<h4>发表新的讨论</h4>
+								<div>
+								<form action="{:U('discuss/taolun','hid='.$hid,'htitle='.$htitle)}">
+								<div class="" id="default-selects2">
+											<select>
+												<option value="1">所有类别</option>
+												<option value="2">老师</option>
+												<option value="3">工程师</option>
+												<option value="4">四六级</option>
+												<option value="5">前端开发</option>
+												<option value="6">后端开发</option>
+												<option value="7">人工智能</option>
+												
+											</select>
+										</div>		
+									<textarea class="600px 400px" name="textarea" id="textarea"></textarea>
+									<button type="submit">提交</button>
+								</form>
+								</div>	
+								
+							</div>
+							</div>
+						<div class="single-slidebar">
+								<h4>关于我</h4>
+								<ul class="cat-list">
+								<li><a class="justify-content-between d-flex" href="category.html"><p>发布讨论</p><span></span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>回复</p><span></span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>收藏</p><span></span></a></li>
+									
+								</ul>
+							</div>
+							<div class="single-slidebar">
+								<h4>讨论概要</h4>
+								<ul class="cat-list">
+								<li><a class="justify-content-between d-flex" href="category.html"><p>所有类别</p><span>{$count1}</span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>老师</p><span>{$count2}</span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>工程师</p><span>{$count3}</span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>四六级</p><span>{$count4}</span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>前端开发</p><span>{$count5}</span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>后端开发</p><span>{$count6}</span></a></li>
+									<li><a class="justify-content-between d-flex" href="category.html"><p>人工智能</p><span>{$count7}</span></a></li>
+									
+								</ul>
+							</div>
+
+							<div class="single-slidebar">
+								
+								<div class="active-relatedjob-carusel">
+									<div class="single-rated">
+									<h4>最热门讨论</h4>
+										<img class="img-fluid" src="img/body-bg.jpg"">
+										<a href="single.html"><h4>JAVA工程师</h4></a>
+										<h6>华为</h6>
+										<p>
+											公司简介或者职位简介
+										</p>
+										<h5>工作性质：全职</h5>
+										<p class="address"><span class="lnr lnr-map"></span>工作地点：重庆</p>
+										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+										<a href="#" class="btns text-uppercase">查看工作</a>
+									</div>
+									<div class="single-rated">
+									<h4>最新讨论</h4>
+										<img class="img-fluid" src="img/body-bg.jpg"">
+										<a href="single.html"><h4>JAVA工程师</h4></a>
+										<h6>华为</h6>
+										<p>
+											公司简介或者职位简介
+										</p>
+										<h5>工作性质：全职</h5>
+										<p class="address"><span class="lnr lnr-map"></span>工作地点：重庆</p>
+										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+										<a href="#" class="btns text-uppercase">查看工作</a>
+									</div>
+																										
+								</div>
+							</div>							
+
+						
+						</div>
+					</div>
+				</div>	
+			</section>
+    </div>
+    <!--====== BACK TO TOP ======-->
+
+
+
+    <!--====== jquery js ======-->
+    <script src="__PUBLIC__/home/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="__PUBLIC__/home/assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="__PUBLIC__/home/assets/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/home/assets/js/popper.min.js"></script>
+
+    <!--====== Slick js ======-->
+    <script src="__PUBLIC__/home/assets/js/slick.min.js"></script>
+
+    <!--====== Isotope js ======-->
+    <script src="__PUBLIC__/home/assets/js/isotope.pkgd.min.js"></script>
+
+    <!--====== Images Loaded js ======-->
+    <script src="__PUBLIC__/home/assets/js/imagesloaded.pkgd.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="__PUBLIC__/home/assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Nice Select js ======-->
+    <script src="__PUBLIC__/home/assets/js/jquery.nice-select.min.js"></script>
+
+    <!--====== Ajax Contact js ======-->
+    <script src="__PUBLIC__/homeadmin/assets/js/ajax-contact.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="__PUBLIC__/home/assets/js/main.js"></script>
+    
+			<script src="__PUBLIC__/home/job/js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="__PUBLIC__/home/job/js/vendor/bootstrap.min.js"></script>
+  			<script src="__PUBLIC__/home/job/js/easing.min.js"></script>
+			<script src="__PUBLIC__/home/job/js/hoverIntent.js"></script>
+			<script src="__PUBLIC__/home/job/js/superfish.min.js"></script>	
+			<script src="__PUBLIC__/home/job/js/jquery.ajaxchimp.min.js"></script>
+			<script src="__PUBLIC__/home/job/js/jquery.magnific-popup.min.js"></script>	
+			<script src="__PUBLIC__/home/job/js/owl.carousel.min.js"></script>			
+			<script src="__PUBLIC__/home/job/js/jquery.sticky.js"></script>
+			<script src="__PUBLIC__/home/job/js/jquery.nice-select.min.js"></script>			
+			<script src="__PUBLIC__/home/job/js/parallax.min.js"></script>		
+			<script src="__PUBLIC__/home/job/js/mail-script.js"></script>	
+			<script src="__PUBLIC__/home/job/js/main.js"></script>
+    
+   
+    
+
+</body>
+
+</html>

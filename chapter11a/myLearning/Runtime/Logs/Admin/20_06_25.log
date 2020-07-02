@@ -1,0 +1,100 @@
+[ 2020-06-25T21:16:32+08:00 ] ::1 /chapter11a/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+
+[ 2020-06-25T21:16:32+08:00 ] ::1 /chapter11a/Admin/Login/captcha
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000916s ]
+
+[ 2020-06-25T21:17:05+08:00 ] ::1 /chapter11a/Admin/Login/captcha?rand=0.1471159315676801
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+
+[ 2020-06-25T21:17:16+08:00 ] ::1 /chapter11a/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+
+[ 2020-06-25T21:17:20+08:00 ] ::1 /chapter11a/Admin/UserManagement/userstudentsView.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+
+[ 2020-06-25T21:17:44+08:00 ] ::1 /chapter11a/Admin/UserManagement/userteachersView
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+
+[ 2020-06-25T21:17:51+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+
+[ 2020-06-25T21:18:14+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+
+[ 2020-06-25T21:18:35+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+
+[ 2020-06-25T21:28:31+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000162s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002060s ]
+
+[ 2020-06-25T21:28:51+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2020-06-25T21:33:24+08:00 ] ::1 /chapter11a/Admin/UserManagement/userstudentsView
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+
+[ 2020-06-25T21:33:41+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+
+[ 2020-06-25T21:33:55+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+
+[ 2020-06-25T21:36:46+08:00 ] ::1 /chapter11a/Admin/UserManagement/userteachersView
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+
+[ 2020-06-25T21:36:53+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+
+[ 2020-06-25T21:37:03+08:00 ] ::1 /chapter11a/Admin/UserManagement/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+
+[ 2020-06-25T21:37:19+08:00 ] ::1 /chapter11a/Admin/PostManage/postInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+
+[ 2020-06-25T21:37:21+08:00 ] ::1 /chapter11a/Admin/PostManage/searchPost
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+
+[ 2020-06-25T21:37:22+08:00 ] ::1 /chapter11a/Admin/PostManage/postInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+

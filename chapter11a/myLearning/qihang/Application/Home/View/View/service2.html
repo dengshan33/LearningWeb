@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>服务中心</title>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/Style.css"/>
+    <style type="text/css">
+        .name {
+            width: 118px;
+            padding-left: 17px;
+        }
+
+        .content {
+            width: 118px;
+            padding-left: 17px;
+        }
+
+        .addtime {
+            width: 160px;
+            padding-left: 13px;
+        }
+    </style>
+</head>
+<body>
+	<section id="5">
+    <hr style="margin: 0 0 0 0; height: 1px; width: auto;background: #46b8da;"/>
+    <div style="margin-left: 45%;">
+        <a href="#5" style="font-size: 20px; text-decoration: none;">③二级服务</a>
+    </div>
+    <form action="__CONTROLLER__/service" method="post">
+    <div class="container">
+        <div class="raw">
+            <div class="col-md-6">
+                <p style="color: #46b8da; font-size: 20px; margin-left: 30%;">意见反馈</p>
+                    <textarea name="content" placeholder="" style="margin-top: 5px; width:80%;height: 200px;"></textarea>
+                    <br/>
+                    <button style="margin-top: 10px; margin-left: 30%" id="btnSubmit">提交</button>
+                    <button style="margin-left: 30px;" id="btnReset">重置</button>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+    </form>
+</section>
+</body>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#btnSubmit').on('click',function(){
+            $('form').submit();
+        });
+
+        $('#btnReset').on('click',function(){
+         $('form')[0].reset();
+         });
+    });
+
+
+
+    var index=0;
+    function Slider() {
+        index++;
+        var obj1=document.getElementById("img1");
+        var obj2=document.getElementById("img2");
+        var obj3=document.getElementById("img3");
+        var obj4=document.getElementById("p1");
+        var obj5=document.getElementById("p2");
+        var obj6=document.getElementById("p3");
+        var m=index%3;
+        if(m==0){
+            //alert(obj1.getAttribute(src));
+            //obj1.setAttribute(src,"__PUBLIC__/Home/images/oc_bg.png");
+            //obj1.font="Welcome";
+            obj6.style.display="none";
+            obj5.style.display="none";
+            obj1.style.display="block";
+            obj2.style.display="none";
+            obj3.style.display="none";
+            obj4.style.display="block";
+        }
+        if(m==1){
+            //alert("h")
+            obj4.style.display="none";
+            obj2.style.display="block";
+            obj1.style.display="none";
+            obj3.style.display="none";
+            obj5.style.display="block";
+            obj6.style.display="none"
+            //obj1.setAttribute(src,"__PUBLIC__/Home/images/oc_bg1.png");
+        }
+        if(m==2){
+            obj4.style.display="none";
+            obj5.style.display="none";
+            obj6.style.display="block";
+            obj3.style.display="block";
+            obj2.style.display="none";
+            obj1.style.display="none";
+            //alert("3")
+            //obj1.setAttribute(src,"__PUBLIC__/Home/images/oc_bg2.png");
+        }
+        //alert("Message");
+    }
+    setInterval(Slider,5000);
+</script>
+</html>

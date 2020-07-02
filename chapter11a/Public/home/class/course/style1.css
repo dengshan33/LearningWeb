@@ -1,0 +1,315 @@
+
+body {
+  line-height: 25px;
+  font-size: 16px;
+  font-family: "Crimson Text", serif;
+  background-image: url("../../assets/images/lunbo1.jpg");
+  font-weight: 600;
+  color: #fff; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #FFFFFF; }
+
+body {
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out; }
+  a:hover, a:focus {
+    text-decoration: none;
+    outline: none; }
+
+.section_gap {
+  padding: 120px 0; }
+  @media (max-width: 991px) {
+    .section_gap {
+      padding: 60px 0; } }
+
+.main_title {
+  text-align: center;
+  margin-bottom: 75px; 
+  }
+
+.lite_bg {
+  background: #f09458; }
+  
+  .p1-gradient-bg, .primary-btn:after, .banner-area, .single-feature .icon:after, .service-area, .story-area, .single-widget .icon:after {
+    background-image: -moz-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+    background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+    background-image: -ms-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+  }
+  
+  .service-area {
+    padding: 100px 0;
+  }
+  
+  .main-wrapper-first {
+    width: 68.75%;
+    margin: 0 auto;
+    margin-top: 6rem;
+  }
+  
+  @media (min-width: 1200px) {
+    .main-wrapper-first {
+      width: 75%;
+    }
+  }
+  
+  @media (max-width: 1199px) {
+    .main-wrapper-first {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .main-wrapper-first {
+      margin-top: 3rem;
+      width: 97%;
+    }
+  }
+
+.primary-btn {
+  display: inline-block;
+  background: -webkit-linear-gradient(to right, #00aee0 0%, #00fedc 51%, #00aee0 100%);
+  background: -moz-linear-gradient(to right, #00aee0 0%, #00fedc 51%, #00aee0 100%);
+  background: -ms-linear-gradient(to right, #00aee0 0%, #00fedc 51%, #00aee0 100%);
+  background: -o-linear-gradient(to right, #00aee0 0%, #00fedc 51%, #00aee0 100%);
+  background: linear-gradient(to right, #00aee0 0%, #00fedc 51%, #00aee0 100%);
+  background-size: 200% auto;
+  padding: 0px 38px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 50px;
+  border-radius: 0px;
+  outline: none !important;
+  box-shadow: 0px 20px 50px rgba(0, 175, 224, 0.3);
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+  .primary-btn:hover {
+    background-position: right center;
+    color: #fff;
+    box-shadow: none; }
+
+.popular_courses {
+  padding: 120px 0 90px; }
+  @media (max-width: 991px) {
+    .popular_courses {
+      padding: 60px 0 30px; } }
+
+.single_course {
+  margin-bottom: 42px; 
+  }
+  .single_course .course_head {
+    position: relative;
+    overflow: hidden; }
+    .single_course .course_head.overlay:after {
+      background: #000;
+      opacity: 0.2;
+      z-index: 1; }
+	  
+    .single_course .course_head .authr_meta {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      z-index: 2; }
+      .single_course .course_head .authr_meta span {
+        color: #fff;
+        padding-left: 10px; }
+      .single_course .course_head .authr_meta img {
+        margin-top: -8px;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s; }
+		
+    .single_course .course_head img {
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s; }
+	    	    
+  .single_course .course_content {
+    padding-top: 30px; }
+    .single_course .course_content h4 a {
+      color: #222222; }
+    .single_course .course_content p {
+      margin: 0; }
+    .single_course .course_content .course_meta {
+      margin-top: 25px; }
+      .single_course .course_content .course_meta .meta_info {
+        margin-right: 25px; }
+        .single_course .course_content .course_meta .meta_info a {
+          color: #222222; }
+        .single_course .course_content .course_meta .meta_info i.lnr {
+          padding-right: 5px; }
+      .single_course .course_content .course_meta .price {
+        padding: 10px 24px;
+        font-size: 15px;
+        color: #fff;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        box-shadow: 0px 20px 50px rgba(0, 175, 224, 0.2); }
+        .single_course .course_content .course_meta .price.df_color1 {
+          box-shadow: 0px 20px 50px rgba(233, 62, 135, 0.2); }
+        .single_course .course_content .course_meta .price.df_color2 {
+          box-shadow: 0px 20px 50px rgba(115, 73, 204, 0.2); }
+		  
+/* Start Courses Details Area css
+============================================================================================ */
+.course_details_area .title {
+  font-size: 21px;
+  border: none;
+  cursor: pointer;
+  margin-top: 40px;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 22px; }
+  .course_details_area .title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 1px;
+    width: 74px;
+    background: #4dbf1c; }
+
+.course_details_left .course_list {
+  margin-bottom: 0; }
+  @media (max-width: 575px) {
+    .course_details_left .course_list {
+      padding-left: 0; } }
+  .course_details_left .course_list li {
+    list-style: none;
+    margin-bottom: 20px; }
+    .course_details_left .course_list li .primary-btn {
+      background: #f9f9f9;
+      color: #777777;
+      box-shadow: none;
+      font-size: 12px; }
+      .course_details_left .course_list li .primary-btn:hover {
+        background: #00aee0;
+        color: #ffffff;
+        box-shadow: 0px 10px 30px rgba(0, 175, 224, 0.3); }
+      @media (max-width: 575px) {
+        .course_details_left .course_list li .primary-btn {
+          min-width: 100px;
+          font-size: 10px;
+          padding: 0 10px; } }
+    .course_details_left .course_list li:last-child {
+      margin-bottom: 0; }
+
+@media (max-width: 991px) {
+  .right-contents {
+    margin-top: 50px; } }
+.right-contents ul {
+  padding-left: 0; }
+  .right-contents ul li {
+    list-style: none;
+    background: #f9f9f9;
+    padding: 10px 22px;
+    margin-bottom: 10px; }
+    .right-contents ul li a {
+      color: #777777;
+      text-align: left; }
+      .right-contents ul li a p {
+        margin-bottom: 0px; }
+    .right-contents ul li .or {
+      color: #222222; }
+.right-contents .enroll {
+  margin-top: 10px;
+  width: 100%; }
+.right-contents .reviews span,
+.right-contents .reviews .star {
+  width: 31%;
+  margin-bottom: 10px; }
+.right-contents .avg-review {
+  background: #04091e;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px 0px; }
+  .right-contents .avg-review span {
+    font-size: 18px;
+    color: #00aee0; }
+  @media (max-width: 991px) {
+    .right-contents .avg-review {
+      margin-bottom: 20px; } }
+@media (max-width: 1024px) {
+  .right-contents .single-reviews .thumb {
+    margin-right: 10px; } }
+.right-contents .single-reviews h5 {
+  display: inline-flex; }
+  @media (max-width: 1024px) {
+    .right-contents .single-reviews h5 {
+      display: block; } }
+  .right-contents .single-reviews h5 .star {
+    margin-left: 10px; }
+    @media (max-width: 1024px) {
+      .right-contents .single-reviews h5 .star {
+        margin: 10px 0; } }
+.right-contents .feedeback {
+  margin-top: 30px; }
+  .right-contents .feedeback textarea {
+    resize: none;
+    height: 130px;
+    background: #f1f9ff; }
+    .right-contents .feedeback textarea:focus {
+      box-shadow: none; }
+.right-contents .star .checked {
+  color: #4dbf1c; }
+.right-contents .comments-area {
+  padding: 0;
+  border: 0;
+  background: transparent; }
+  .right-contents .comments-area .star {
+    margin-left: 20px; }
+
+/* End  Courses Details Area css
+============================================================================================ */
+
+
+ .comments-area .thumb {
+    margin-right: 20px; }
+
+b, sup, sub, u, del {
+  color: #f8b600; }
+
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 16px; }
+
+h6 {
+  font-size: 14px; }

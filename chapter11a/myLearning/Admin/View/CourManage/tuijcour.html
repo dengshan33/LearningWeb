@@ -1,0 +1,42 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">课程信息</font> &gt;<font color="#8AAEB8">推荐课程</font>
+</p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 20px">
+    <table class="table table-hover" style="color:#8AAEB8">
+        <thead>
+            <tr>
+                <th>id</th>
+                 <th>课程号</th>
+                <th>课程名</th>
+                <th>老师名字</th>
+                <th>所属学校</th>
+                <th>发布时间</th>
+            </tr>
+        </thead>
+        <tbody style="color: #8AAEB8">
+           <foreach name="list" item="v">
+               <tr>
+                   <td>{$v.tid}</td>
+                   <td>{$v.tno}</td>
+                   <td>{$v.tname}</td>
+                   <td>{$v.teachername}</td>
+                 	<td>{$v.tschool}</td>
+                 	<td>{$v.tnowtime}</td>
+                   <td><a href="__CONTROLLER__/detailtuij/nid/{$v.tid}" >详情...</a></td>
+               </tr>
+           </foreach>
+        </tbody>
+    </table>
+    <div class="pageList" style="margin-left: 500px;">
+        {$page}
+    </div>
+</div>
+
+<style type="text/css">
+    .viewNews{
+        background-color: mediumvioletred;
+    }
+</style>

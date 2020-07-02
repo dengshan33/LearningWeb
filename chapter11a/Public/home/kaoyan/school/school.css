@@ -1,0 +1,141 @@
+.img-school {
+	width: 300px;
+    height: auto;
+}
+body {
+  background-attachment: fixed;
+  background-image: url("../img/body-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 25px;
+  font-size: 16px;
+  /* font-family: 宋体; */
+  font-weight: 600;
+  position: relative;
+}
+
+.service-area {
+    background-image: -webkit-linear-gradient(0deg, #fff 0%, #fff 100%);
+  }
+  
+  .service-area {
+    padding: 100px 0;
+  }
+  
+  .main-wrapper-first {
+    width: 68.75%;
+    margin: 0 auto;
+    margin-top: 6rem;
+  }
+  
+  @media (min-width: 1200px) {
+    .main-wrapper-first {
+      width: 75%;
+    }
+  }
+  
+  @media (max-width: 1199px) {
+    .main-wrapper-first {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .main-wrapper-first {
+      margin-top: 3rem;
+      width: 97%;
+    }
+  }
+
+.main-wrapper-first {
+  width: 68.75%;
+  margin: 0 auto;
+  margin-top: 6rem;
+}
+
+@media (min-width: 1200px) {
+  .main-wrapper-first {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main-wrapper-first {
+    width: 90%;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-wrapper-first {
+    margin-top: 3rem;
+    width: 97%;
+  }
+}
+
+.container {
+    width: 100%;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #FFFFFF; }
+
+
+/* 标题 */
+.course_details_area .title {
+  font-size: 21px;
+  border: none;
+  cursor: pointer;
+  margin-top: 40px;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 22px; 
+  }
+ 
+ /* 标题下面的绿线 */ 
+.course_details_area .title:after {  
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 1px;
+    width: 80px;
+    background: #4dbf1c; 
+	}
+	
+.d-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+	}
+li{
+	list-style: none;
+}
+.clear{
+	clear: both;
+}
+hr{
+	color: #000000;
+	width: 250px;
+	float: left;
+}
+p{
+	font-family: 宋体;
+}

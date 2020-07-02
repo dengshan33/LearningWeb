@@ -1,0 +1,72 @@
+<layout name="layout" />
+<p><span style="border-right:4px solid gray;margin-right:5px;padding-left:10px;"></span>
+    <font color="#8AAEB8" size="4">公共信息</font> &gt;<font color="#8AAEB8">推荐学校</font>
+    &gt;<font color="#8AAEB8">添加推荐学校</font>
+</p>
+<hr style="margin-top: 10px;margin-bottom: 0px;border-top: 2px solid #8AAEB8;"/>
+
+<div style="margin-top: 20px">
+    <div class="row">
+        <div class="col-sm-6 col-xs-6">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="newsTitle">请输入学校名</label>
+                    <input type="text" class="form-control" name="kname" id="newsTitle" />
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入学校地址</label>
+                     <input type="text" class="form-control" name="klication" id="newsTitle" />
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入学校校长</label>
+                     <input type="text" class="form-control" name="kpresident" id="newsTitle" />
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入学校类型</label>
+                     <input type="text" class="form-control" name="kleixing" id="newsTitle" />
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入创办时间</label>
+                     <input type="text" class="form-control" name="ktime" id="newsTitle" />
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入硕士点</label>
+                     <input type="text" class="form-control" name="kshuoshi" id="newsTitle" />
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入学校简介</label>
+                    <textarea type="text" rows="4" class="form-control" name="tprofile" id="newsContent" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入校训</label>
+                    <textarea type="text" rows="2" class="form-control" name="txiaoshun" id="newsContent" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入学校历史</label>
+                    <textarea type="text" rows="4" class="form-control" name="khistory" id="newsContent" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newContent">请输入学校详情</label>
+                    <textarea type="text" rows="4" class="form-control" name="kcondition" id="newsContent" ></textarea>
+                </div>
+               <div class="form-group">
+                    <label for="newContent">请选择学校图片</label>
+                   <input name="kpic" type="file" value="" size="58"/>
+                </div>
+                <a class="btn btn-default" href="__CONTROLLER__/school" >取消</a>
+                <button type="submit" class="btn btn-default">确认</button>
+            </form>
+        </div>
+        <div class="col-xs-2 col-sm-2">
+            <p style="margin-top: 35px;font-size: 18px">*</p>
+            <p style="margin-top: 48px;font-size: 18px">*</p>
+            <p style="margin-top: 70px;font-size: 18px">*</p>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .viewNews{
+        background-color: mediumvioletred;
+    }
+</style>
